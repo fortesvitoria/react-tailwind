@@ -5,17 +5,16 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'; // Ícones s
 
 const Navbar = () => {
     return (
-        <Disclosure as="nav" className="text-white">
+        <Disclosure as="nav" className="p-4">
             {({ open }) => (
                 <>
                     {/* Container Principal: Grid para Desktop / Flex para Mobile */}
                     <div className="px-2 py-1 grid grid-cols-2 md:grid-cols-6 items-center bg-white/20 rounded-full">
                         
                         {/* 1. Logo (Sempre visível) */}
-                        <div className="flex justify-start">
+                        <div className="flex justify-start ">
                             <Logomarca />
                         </div>
-
                         {/* 2. Botão do Menu Mobile (Visível apenas em telas menores que 'md') */}
                         <div className="flex md:hidden justify-end">
                             <DisclosureButton className="inline-flex items-center justify-center p-2 rounded-full hover:bg-white/20 focus:outline-none">
@@ -28,7 +27,7 @@ const Navbar = () => {
                         </div>
 
                         {/* 3. Links Desktop (Escondidos no mobile: 'hidden md:flex') */}
-                        <ul className="hidden md:flex gap-8 items-center justify-center md:col-span-4 cursor-pointer">
+                        <ul className="text-white hidden md:flex gap-8 items-center justify-center md:col-span-4 cursor-pointer">
                             <li className="hover:text-gray-200 transition">Sobre nós</li>
                             <li className="hover:text-gray-200 transition">Planos</li>
                             <li className="hover:text-gray-200 transition">Agenda</li>
@@ -43,13 +42,13 @@ const Navbar = () => {
 
                     {/* 5. Painel do Menu Mobile (Dropdown que aparece ao clicar) */}
                     <DisclosurePanel className="md:hidden pb-6 px-6 bg-white/20 rounded-4xl">
-                        <ul className="flex flex-col gap-4 font-medium border-t border-white/10 pt-4 mt-2">
+                        <ul className="text-white flex flex-col gap-4 font-medium border-t border-white/10 pt-4 mt-2">
                             <li className="hover:bg-white/10 p-2 rounded-lg">Sobre nós</li>
                             <li className="hover:bg-white/10 p-2 rounded-lg">Planos</li>
                             <li className="hover:bg-white/10 p-2 rounded-lg">Agenda</li>
-                            <li className="hover:text-gray-200 p-2 rounded-lg">Contato</li>
-                            <div className="pt-2">
-                                <Button title="Entrar" />
+                            <li className="hover:bg-white/10 p-2 rounded-lg">Contato</li>
+                            <div className="pt-2 text-black/80">
+                                <Button title="Entrar"  />
                             </div>
                         </ul>
                     </DisclosurePanel>
