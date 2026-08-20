@@ -31,7 +31,7 @@ const Footer = () => {
                 <p className='uppercase font-bold mb-4'>Fale conosco:</p>
                 <div className='flex'>
                     <input className='bg-white/20 p-2 rounded-l-full w-full max-w-75' type="text" placeholder='beachgroup@email.com' />
-                    <button className='rounded-r-full bg-lime-400 hover:bg-lime-500 cursor-pointer text-black font-bold px-2 h-[32px]'>Go</button>
+                    <button className='rounded-r-full bg-lime-400 hover:bg-lime-500 cursor-pointer text-black font-bold px-2 h-8'>Go</button>
                     </div>
             </div>
             <div className='text-xs p-4'>
