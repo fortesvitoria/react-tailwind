@@ -1,75 +1,29 @@
-# React + TypeScript + Vite
+# ADR 1: BeachGroup - Gerenciamento de quadras de beach tennis* **Status:** Aceito* **Data:** 2026-08-21* **Decisores:** Cristiano Serafim, Daniel Rodrigues, Vitória Fortes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Contexto
+A aplicação requer uma interface Web desacoplada para consumir a Web API desenvolvida em .NET 10.
+O prazo de entrega do projeto é de 8 semanas. A equipe possui conhecimento prévio em HTML/
+JavaScript básico, bem como C#.
 
-Currently, two official plugins are available:
+## 2. Opções Consideradas
+* *Opção 1 (Angular):* Oferece uma estrutura robusta e padronizada, mas possui uma curva de
+aprendizado alta exigindo TypeScript estrito e Injeção de Dependência.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* *Opção 2 (React):* Altamente popular e flexível, porém exige a montagem manual da pilha de
+bibliotecas (roteamento, formulários) e o aprendizado de JSX e estado funcional.
 
-## React Compiler
+* *Opção 3 (Vue.js 3 - Composition API):* Oferece reatividade simples via Proxies, excelente
+documentação oficial e integração nativa com o Vue Router sem necessidade de bibliotecas externas
+complexas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 3. Decisão
+Escolhemos o *React*, pois alguns dos componentes do grupo tem conhecimento prévio e sua fexibilidade de trabalho.
 
-## Expanding the ESLint configuration
+## 4. Consequências
+### Positivas:
+* Rapidez no desenvolvimento da interface (curva de aprendizado rápida).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+* Código HTML/CSS fácil de manter e entender por todos os integrantes do grupo.
+* Ótimo para utilização de blocos reutilizáveis
+### Negativas / Riscos (Trade-offs):
+* Mitigação: Utilizaremos Swagger para produtividade e testes em tempo de desenvolvimento
