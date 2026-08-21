@@ -1,4 +1,4 @@
-# aulas-react-tailwind
+# react-tailwind
 
 Repositório com aulas e exemplos utilizados para aprender e desenvolver aplicações utilizando **React**, **TypeScript**, **Vite**, **Tailwind CSS** e **Headless UI**.
 
