@@ -2,7 +2,7 @@ import imagem from '../assets/foto4.jpg';
 
 const SecaoTexto = () => {
     return (
-        <div className="bg-lime-400 rounded-4xl p-4 mt-6 mx-6 grid md:grid-cols-2 items-center">
+        <div className="bg-lime-400 mb-4 rounded-4xl p-4 mt-6 mx-6 grid md:grid-cols-2 items-center">
             <div className="p-4">
                 <h2 className='uppercase text-xl text-justify md:text-3xl font-bold italic'>Nós oferecemos treinamento de beach tennis excepcional e um ambiente acolhedor para jogadores de todas
                     as idades e níveis de habilidade.</h2>
