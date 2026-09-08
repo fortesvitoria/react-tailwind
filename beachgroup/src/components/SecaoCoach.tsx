@@ -12,22 +12,26 @@ const SecaoCoach = () => {
             <div className='grid md:grid-cols-4 items-stretch justify-items-center h-full'>
             <CardCoach imagem={imagem0}
                 nome='Paulo Jorge'
-                descricao='Instrutor infantil'
+                funcao='Instrutor infantil'
+                descricao='Professor dinâmico e paciente, especializado em atividades para crianças, com foco no desenvolvimento da coordenação, diversão e aprendizado do beach tennis.'
              />
 
             <CardCoach imagem={imagem3}
                 nome='Marina Antonia'
-                descricao='Instrutora'
+                funcao='Instrutora'
+                descricao='Instrutora dedicada e motivadora, com experiência em treinamento de beach tennis, promovendo habilidades técnicas, táticas e espírito esportivo entre os alunos.'
              />
 
             <CardCoach imagem={imagem2}
                 nome='Marcos Rangel'
-                descricao='Instrutor'
+                funcao='Instrutor'
+                descricao='Professor experiente e motivador, focado no aprimoramento técnico, condicionamento físico e evolução dos alunos em quadra.'
             />
 
             <CardCoach imagem={imagem1}
                 nome='Ana Regina'
-                descricao='Instrutora'
+                funcao='Instrutora Senior'
+                descricao='Professora atenciosa e paciente, que adapta os exercícios ao ritmo dos alunos, priorizando segurança, mobilidade e qualidade de vida durante as aulas'
             />
         </div>
         </div>
