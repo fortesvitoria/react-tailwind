@@ -12,9 +12,9 @@ const Footer = () => {
     return (
         <div className='bg-gray-950 rounded-t-4xl'>
         <div className="justify-center items-center grid md:grid-cols-4 p-6 text-white divide-y md:divide-y-0 md:divide-x divide-white/30 gap-4 mt-6">
-            <div className='p-4 pb-6'>
+            <div className='p-4 pb-6 flex flex-col justify-center items-center'>
                 <Logomarca />
-                <ul className='ml-6 flex cursor-pointer gap-3'>
+                <ul className='flex cursor-pointer gap-3'>
                     <li className='flex h-7 w-7 items-center justify-center rounded-full bg-sky-400 p-1.5 transition-colors duration-200 hover:bg-sky-600'>
                         <img className='h-full w-full object-contain' src={icone1} alt="icone instagram" />
                     </li>
