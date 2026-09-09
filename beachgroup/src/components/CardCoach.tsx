@@ -16,7 +16,7 @@ const CardCoach = ({ imagem, nome, funcao, descricao }: CardCoachProps) => {
       {({ open }) => (
         <>
             <div className="mb-2 mx-2 border border-black/30 p-2 rounded-4xl flex items-center justify-between w-85.5 lg:w-75 xl:w-85.5">
-              <div className='flex justify-center p-2'>
+              <div className='flex justify-center'>
                 <img src={imagem} className='max-h-20 rounded-t-full rounded-l-full' alt="Beach tennis training" />
               </div>
               <div className='flex flex-col px-2'>
@@ -34,7 +34,7 @@ const CardCoach = ({ imagem, nome, funcao, descricao }: CardCoachProps) => {
               </div>
           </div>
 
-          <DisclosurePanel className="w-85.5 lg:w-75 p-4 mx-2 text-justify rounded-2xl">
+          <DisclosurePanel className="w-85.5 lg:w-75 xl:w-85.5 p-4 mx-2 text-justify rounded-2xl">
 
             <div className="pt-2 text-black/80">
               <p>{descricao}</p>
