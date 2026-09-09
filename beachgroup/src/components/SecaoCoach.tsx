@@ -9,9 +9,9 @@ const SecaoCoach = () => {
     return (
         <div>
             <h2 className='uppercase text-2xl font-bold italic mt-6 mb-4 pl-8 pr-15 text-lime-300 bg-sky-500 inline-block [clip-path:polygon(0%_0%,100%_0%,90%_100%,0%_100%)]'>Nosso time</h2>
-            <div className='grid md:grid-cols-4 items-stretch justify-items-center h-full'>
+            <div className='grid md:grid-cols-2  lg:grid-cols-4 items-stretch justify-items-center h-full'>
             <CardCoach imagem={imagem0}
-                nome='Paulo Jorge'
+                nome='Igor silva'
                 funcao='Instrutor infantil'
                 descricao='Professor dinâmico e paciente, especializado em atividades para crianças, com foco no desenvolvimento da coordenação, diversão e aprendizado do beach tennis.'
              />

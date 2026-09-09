@@ -8,8 +8,8 @@ import imagem3 from '../assets/foto5.jpg';
 const SecaoCards = () => {
     return (
         <div>
-            <h2 className='uppercase text-2xl font-bold italic mt-6 mb-4 pl-8 pr-15 text-lime-300 bg-sky-500 inline-block [clip-path:polygon(0%_0%,100%_0%,90%_100%,0%_100%)]'>Nossos planos</h2>
-            <div className='grid md:grid-cols-4 items-stretch justify-items-center h-full'>
+            <h2 className='uppercase text-2xl font-bold italic mt-1 mb-1 pl-8 pr-15 text-lime-300 bg-sky-500 inline-block [clip-path:polygon(0%_0%,100%_0%,90%_100%,0%_100%)]'>Nossos planos</h2>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 items-stretch justify-items-center h-full'>
             <Card imagem={imagem0}
                 titulo='Passe único'
                 descricao='Alugue a quadra uma única vez'
