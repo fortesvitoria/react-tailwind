@@ -15,7 +15,7 @@ const CardCoach = ({ imagem, nome, funcao, descricao }: CardCoachProps) => {
     <Disclosure as="nav" className="">
       {({ open }) => (
         <>
-            <div className="mb-2 mx-2 border border-black/30 p-2 rounded-4xl flex items-center justify-between w-85.5 lg:w-75 xl:w-85.5">
+            <div className="mb-6 mx-2 border border-black/30 p-2 rounded-4xl flex items-center justify-between w-85.5 lg:w-75 xl:w-85.5">
               <div className='flex justify-center'>
                 <img src={imagem} className='max-h-20 rounded-t-full rounded-l-full' alt="Beach tennis training" />
               </div>
@@ -34,9 +34,9 @@ const CardCoach = ({ imagem, nome, funcao, descricao }: CardCoachProps) => {
               </div>
           </div>
 
-          <DisclosurePanel className="w-85.5 lg:w-75 xl:w-85.5 p-4 mx-2 text-justify rounded-2xl">
+          <DisclosurePanel className="w-85.5 lg:w-75 xl:w-85.5 px-4 pb-6 mx-2 text-justify rounded-2xl">
 
-            <div className="pt-2 text-black/80">
+            <div className="text-black/80">
               <p>{descricao}</p>
               <div className='flex justify-end'>
                 <Button title="Agendar"/>
