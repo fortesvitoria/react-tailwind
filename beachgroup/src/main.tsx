@@ -6,6 +6,7 @@ import SecaoTexto from './components/SecaoTexto.tsx'
 import SecaoCards from './components/SecaoCards.tsx'
 import Footer from './components/Footer.tsx'
 import SecaoCoach from './components/SecaoCoach.tsx'
+import HomeSecaoCardSlider from './components/SecaoCarouselImagens.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')!).render(
       <SecaoTexto />
       <SecaoCards />
       <SecaoCoach />
+      <HomeSecaoCardSlider />
       <Footer />
+    
 
       
   </StrictMode>,
