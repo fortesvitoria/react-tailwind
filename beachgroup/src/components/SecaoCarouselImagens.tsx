@@ -10,10 +10,12 @@ let slides = [imagem0, imagem1, imagem2, imagem3, imagem4, imagem5];
 
 const SecaoCarouselImagens = () => {
   return (
-    <div className='py-8'>
+    <div className='py-2'>
       <h2 className='uppercase text-2xl font-bold italic mt-1 mb-2 pl-8 pr-15 text-lime-300 bg-sky-500 inline-block [clip-path:polygon(0%_0%,100%_0%,90%_100%,0%_100%)]'>Galeria de fotos</h2>
-      <div className="w-[80%] md:w-[25%] m-auto">
+      <div className=''>
+        <div className="w-[90%] md:w-[25%] m-auto  bg-gray-400/20 rounded-4xl">
         <CarouselImagens slides={slides} />
+      </div>
       </div>
     </div>
     )
