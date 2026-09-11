@@ -2,8 +2,12 @@ import Button from './Button.tsx'
 import Logomarca from './Logomarca.tsx'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'; // Ícones sugeridos para o menu
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
     return (
         <Disclosure as="nav" className="p-4">
             {({ open }) => (
@@ -36,7 +40,7 @@ const Navbar = () => {
 
                         {/* 4. Botão Entrar Desktop (Escondido no mobile) */}
                         <div className="hidden md:flex justify-end">
-                            <Button title="Entrar" />
+                            <Button title="Entrar" onClick={() => navigate('/login')} />
                         </div>
                     </div>
 
@@ -48,7 +52,7 @@ const Navbar = () => {
                             <li className="hover:bg-white/10 p-2 rounded-lg">Agenda</li>
                             <li className="hover:bg-white/10 p-2 rounded-lg">Contato</li>
                             <div className="pt-2 text-black/80">
-                                <Button title="Entrar"  />
+                                <Button title="Entrar" onClick={() => navigate('/login')} />
                             </div>
                         </ul>
                     </DisclosurePanel>
