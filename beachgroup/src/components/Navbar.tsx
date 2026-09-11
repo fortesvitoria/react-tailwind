@@ -14,7 +14,7 @@ const Navbar = () => {
                 <>
                     {/* Container Principal: Grid para Desktop / Flex para Mobile */}
                     <div className="px-2 py-1 grid grid-cols-2 md:grid-cols-6 items-center bg-white/20 rounded-full">
-                        
+
                         {/* 1. Logo (Sempre visível) */}
                         <div className="flex justify-start ">
                             <Logomarca />
@@ -40,7 +40,8 @@ const Navbar = () => {
 
                         {/* 4. Botão Entrar Desktop (Escondido no mobile) */}
                         <div className="hidden md:flex justify-end">
-                            <Button title="Entrar" onClick={() => navigate('/login')} />
+                            <Button onClick={() => navigate('/cadastro')} title="Cadastrar-se"  />
+                            <Button title="Entrar" onClick={() => navigate('/login')} bgColor="bg-sky-400" hoverColor="hover:bg-sky-600" />
                         </div>
                     </div>
 
@@ -52,7 +53,8 @@ const Navbar = () => {
                             <li className="hover:bg-white/10 p-2 rounded-lg">Agenda</li>
                             <li className="hover:bg-white/10 p-2 rounded-lg">Contato</li>
                             <div className="pt-2 text-black/80">
-                                <Button title="Entrar" onClick={() => navigate('/login')} />
+                                <Button onClick={() => navigate('/cadastro')} title="Cadastrar-se" />
+                                <Button title="Entrar" onClick={() => navigate('/login')} bgColor="bg-sky-400" hoverColor="hover:bg-sky-600" />
                             </div>
                         </ul>
                     </DisclosurePanel>
