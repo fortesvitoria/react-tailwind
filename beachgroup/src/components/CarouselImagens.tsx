@@ -1,50 +1,81 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'; // Ícones sugeridos para o menu
-import React from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from 'react';
 
-
-//typescript:
 type CarouselImagensProps = {
-    slides: Array<string>;
+  slides: Array<string>;
 };
 
 const CarouselImagens = ({ slides }: CarouselImagensProps) => {
+  const [current, setCurrent] = useState(1);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-    let [current, setCurrent] = React.useState(2);
+  // Detecta se a tela é desktop (>= 768px)
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 768);
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
 
-    let previousSlide = () => {
-        if (current === 0) {
-            setCurrent(slides.length - 1);
-        } else {
-            setCurrent(current - 1);
-        }
-    };
+  const previousSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
-    let nextSlide = () => {
-        if (current === slides.length - 1) {
-            setCurrent(0);
-        } else {
-            setCurrent(current + 1);
-        }
-    };
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
-    return (
-        <div className=" relative">
-            <div className={`flex transition ease-out duration-300`} style={{ transform: `translateX(-${current * 100}%)` }}>
-                {slides.map((slide) => {
-                    return <img src={slide} alt="Imagem do Carousel" className="rounded-4xl p-2" />
-                })}
-                
+  // Ajusta a largura e o deslocamento dependendo do dispositivo
+  const itemWidth = isDesktop ? 33.33 : 70;
+  const offset = isDesktop ? 33.33 : 15;
+
+  return (
+    <div className="relative w-full overflow-hidden py-10">
+      {/* Botões */}
+      <button 
+        onClick={previousSlide} 
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-lime-400 hover:bg-lime-500 text-gray-900 shadow-lg cursor-pointer transition"
+      >
+        <ChevronLeftIcon className="h-5 w-5" />
+      </button>
+
+      <button 
+        onClick={nextSlide} 
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-lime-400 hover:bg-lime-500 text-gray-900 shadow-lg cursor-pointer transition"
+      >
+        <ChevronRightIcon className="h-5 w-5" />
+      </button>
+
+      {/* Container de Imagens com cálculo dinâmico */}
+      <div 
+        className="flex transition-transform duration-500 ease-out"
+        style={{
+          transform: `translateX(calc(-${current * itemWidth}% + ${offset}%))`,
+        }}
+      >
+        {slides.map((slide, index) => {
+          const isActive = index === current;
+
+          return (
+            <div
+              key={index}
+              className={`shrink-0 w-[70%] md:w-1/3 px-2 transition-all duration-500 ease-out ${
+                isActive 
+                  ? 'scale-100 opacity-100 z-10' 
+                  : 'scale-90 opacity-40 blur-[1px]'
+              }`}
+            >
+              <img
+                src={slide}
+                alt={`Imagem ${index + 1}`}
+                className="w-full h-[350px] md:h-[420px] object-cover rounded-3xl shadow-xl"
+              />
             </div>
-            <div className=' top-0 h-full w-full justify-center flex items-center px-4'>
-                <button onClick={previousSlide} className='p-2 m-2 rounded-full bg-lime-400 hover:bg-lime-500 cursor-pointer focus:outline-none'>
-                    <ChevronLeftIcon className="block h-6 w-6" aria-hidden="true" />
-                </button>
-                <button onClick={nextSlide} className='p-2 m-2 rounded-full bg-lime-400 hover:bg-lime-500 cursor-pointer focus:outline-none'>
-                    <ChevronRightIcon className="block h-6 w-6" aria-hidden="true" />
-                </button>
-            </div>
-        </div>
-    )
-}
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default CarouselImagens
+export default CarouselImagens;
