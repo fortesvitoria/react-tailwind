@@ -28,7 +28,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div>
-                    <p className="m-2 mt-8 text-white/20 text-center text-xs">© 2026 BeachGroup. Todos os direitos reservados.</p>
+                    <p className="m-2 mt-8 text-white/60 text-center text-xs">© 2026 BeachGroup</p>
                 </div>
             </div>
         </div>
