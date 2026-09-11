@@ -16,8 +16,8 @@ const Login = () => {
                         <InputItem title="Email" />
                         <InputItem title="Senha" />
                         <div className='flex justify-between items-center gap-2 text-xs p-2'>
-                            <div>
-                                <input type="checkbox" className='checked:bg-sky-600'/> Lembrar-me
+                            <div className='flex items-center'>
+                                <input type="checkbox" className='checked:bg-sky-600 mr-0.5'/> Lembrar-me
                             </div>
                             <a href="#" className=" hover:underline ">
                                 Esqueci minha senha
